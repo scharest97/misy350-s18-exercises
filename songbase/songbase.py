@@ -4,8 +4,17 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return "hello Sam"
+    return render_template('index.html')
 
+
+@app.route('/form-basics')
+def formbasics():
+    return render_template('form-basics.html')
+
+@app.route('/form-demo')
+def form_demo():
+    first_name= request.args.get('first_name')
+    return first_name
 
 @app.route('/user')
 def user():
